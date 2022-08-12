@@ -4,12 +4,15 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="google-signin-scope" content="profile email">
   <title>eMercado - Todo lo que busques está aquí</title>
-
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/bootstrap.min.css" rel="stylesheet">
   <link href="css/styles.css" rel="stylesheet">
   <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/sign-in/">
+  <script src="https://apis.google.com/js/platform.js" async defer></script>
+  <meta name="google-signin-client_id" content="442055177936-p5i0ht4dh9782tn1s4lhifpfinhvojhh.apps.googleusercontent.com">
+  
   <style>
     body {
       background-color: rgb(248, 249, 250);
@@ -42,6 +45,7 @@
           </div>
           <div class="text-center">
             <button onclick="valido()" type="button" class="btn btn-info mt-4">Ingresar</button>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
           </div>
         </div>
       </div>
@@ -57,7 +61,22 @@
       <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
     </div>
   </footer>
-  <script src="js/login.js"></script>
+  <script src="js/login.js">
+     function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log('Full Name: ' + profile.getName());
+        console.log('Given Name: ' + profile.getGivenName());
+        console.log('Family Name: ' + profile.getFamilyName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      }
+  </script>
 </body>
 
 
