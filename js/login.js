@@ -20,6 +20,9 @@ function onSignIn(googleUser) {
     console.log("ID Token: " + id_token);
     window.location.href = "index2.html";
 }
+function otro(){
+    window.location.href = "index2.html";
+}
 
 
 
