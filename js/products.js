@@ -143,6 +143,8 @@ document.getElementById("filter").addEventListener("click", function(){
 
 document.getElementById("clearRangeFilter").addEventListener("click", function(){
     document.getElementById("pro-list-container").innerHTML = "";
+    document.getElementById("rangeFilterPriceMin").value = "";
+    document.getElementById("rangeFilterPriceMax").value = "" ;
     showProductsList(produ);
 });
 
