@@ -23,6 +23,9 @@ function onSignIn(googleUser) {
 function otro(){
     window.location.href = "index2.html";
 }
+function setUser(user) {
+    localStorage.setItem("user", user);
+}
 
 
 
@@ -45,6 +48,7 @@ function valido() {
         mostrarAlerta2();
     }
     if(user.length > 0 && pass.length > 0){
+        setUser(user);
         window.location.href = "index2.html";
     }
 }
