@@ -89,6 +89,7 @@ function f(int) {
 
 
 document.addEventListener("DOMContentLoaded", function (e) {
+    document.getElementById("username").innerHTML=localStorage.getItem("user");
     getJSONData(objeto).then(function (resultObj) {
         if (resultObj.status === "ok") {
             showProduct(resultObj.data)
@@ -100,5 +101,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showCom(arrayComentarios)
         }
     })
+    
 })
 
