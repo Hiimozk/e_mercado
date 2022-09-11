@@ -9,6 +9,10 @@ let a;
 function showTitulo(titulo){
     document.getElementById("categoriaName").innerHTML=titulo.catName  
 }
+function setProID(id) {
+    localStorage.setItem("ProID", id);
+    window.location = "product-info.html"
+}
 
 function showProductsList(produ){
     for(let i = 0; i < produ.length; i++){
@@ -16,7 +20,7 @@ function showProductsList(produ){
         
             htmlContentToAppend = `
             
-                <div class="row">
+                <div onclick="setProID(${produ[i].id})" class="row">
                     <div class="col-3">
                         <img src="${produ[i].image}" alt="" class="img-thumbnail">
                     </div>
