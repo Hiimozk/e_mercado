@@ -32,20 +32,25 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li class="nav-item">
-            <span class="nav-link" id="username"></span>
+            <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
+              <option selected id="username"></option>
+              <option value="cart.html">Mi Carrito</option>
+              <option value="my-profile.html">Mi Perfil</option>
+              <option value="index.html">Cerrar sesión</option>
+            </select>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div id="produ-info"class="container">
+    <div id="produ-info" class="container">
     </div>
-    
-    <div id="com-info"class="container">
+
+    <div id="com-info" class="container">
     </div>
     <div class="container">
-      <hr>  
+      <hr>
       <div class="form-group">
         <h2>Comentar</h2>
         <textarea class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3"></textarea>
@@ -60,6 +65,13 @@
       </select>
       <br>
       <button type="button" class="btn btn-primary">Enviar</button>
+    </div>
+    
+    <div class="container">
+      <hr>
+      <h2>Productos relacionados</h2>
+      <div class="row" id="relatedProdu">
+      </div>
     </div>
   </main>
   <footer class="text-muted">

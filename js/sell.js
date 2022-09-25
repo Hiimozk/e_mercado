@@ -30,8 +30,9 @@ function updateTotalCosts(){
 document.addEventListener("DOMContentLoaded", function(e){
     document.getElementById("productCountInput").addEventListener("change", function(){
         productCount = this.value;
-        updateTotalCosts();
+        updateTotalCosts();  
     });
+    document.getElementById("username").innerHTML=localStorage.getItem("user");
 
     document.getElementById("productCostInput").addEventListener("change", function(){
         productCost = this.value;

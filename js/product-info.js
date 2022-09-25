@@ -4,6 +4,7 @@ let comentarios = PRODUCT_INFO_COMMENTS_URL + pro + ".json";
 let arrayComentarios = [];
 
 function showProduct(obj) {
+    console.log(obj)
     htmlContentToAppend = `
                 <div class="row">
                     <h1>${obj.name}</h1>
@@ -30,8 +31,7 @@ function showProduct(obj) {
 }
 function showCom(array) {
     for (let o = 0; o < array.length; o++) {
-       console.log(array[o])
-       inner=`
+        inner = `
        <div class="border">
        <span><strong>${array[o].user}</strong>-${array[o].dateTime}-${f(array[o].score)}</span>
        <br/>
@@ -44,40 +44,40 @@ function showCom(array) {
 }
 
 function f(int) {
-    if(int===5){
-        return`
+    if (int === 5) {
+        return `
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         `
-    }else if(int===4){
-        return`
+    } else if (int === 4) {
+        return `
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         `
-    }else if(int===3){
-        return`
+    } else if (int === 3) {
+        return `
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
         `
-    }else if(int===2){
-        return`
+    } else if (int === 2) {
+        return `
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
         `
-    }else if(int===1){
-        return`
+    } else if (int === 1) {
+        return `
         <span class="fa fa-star checked"></span>
         <span class="fa fa-star"></span>
         <span class="fa fa-star"></span>
@@ -86,13 +86,31 @@ function f(int) {
         `
     }
 }
-
+function setProID(id) {
+    localStorage.setItem("ProID", id);
+    window.location = "product-info.html"
+    console.log(id)
+}
+function showRelacionados(array) {
+    console.log(array)
+    for(let f=0; f<array.length; f++){
+    inner2 = `
+    <div class="card" style="width: 18rem;" onclick="setProID(${array[f].id})">
+        <img class="card-img-top" src="${array[f].image}" alt="Card image cap">
+        <div class="card-body">
+        <h5 class="card-title text-center">${array[f].name}</h5>
+        </div>
+    </div>`
+    document.getElementById("relatedProdu").innerHTML += inner2;
+    }
+}
 
 document.addEventListener("DOMContentLoaded", function (e) {
-    document.getElementById("username").innerHTML=localStorage.getItem("user");
+    document.getElementById("username").innerHTML = localStorage.getItem("user");
     getJSONData(objeto).then(function (resultObj) {
         if (resultObj.status === "ok") {
             showProduct(resultObj.data)
+            showRelacionados(resultObj.data.relatedProducts)
         }
     })
     getJSONData(comentarios).then(function (resultObj) {
@@ -101,6 +119,6 @@ document.addEventListener("DOMContentLoaded", function (e) {
             showCom(arrayComentarios)
         }
     })
-    
+
 })
 
