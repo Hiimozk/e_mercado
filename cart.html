@@ -30,24 +30,83 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li>
-          <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
-            <option selected id="username"></option>
-            <option value="cart.html">Mi Carrito</option>
-            <option value="my-profile.html">Mi Perfil</option>
-            <option value="index.html">Cerrar sesión</option>
-          </select>
+            <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
+              <option selected id="username"></option>
+              <option value="cart.html">Mi Carrito</option>
+              <option value="my-profile.html">Mi Perfil</option>
+              <option value="index.html">Cerrar sesión</option>
+            </select>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container mt-4">
+      <h1 class="text-center">Carrito de compras</h1>
+      <h4 class="mb-5">Articulos a comprar</h4>
+      <div class="row">
+        <div class="col-2">
+          <p><strong>
+              Nombre
+            </strong>
+          </p>
+        </div>
+        <div class="col-2">
+          <p><strong>
+              Costo
+            </strong>
+          </p>
+        </div>
+        <div class="col-2">
+          <p><strong>
+              Cantidad
+            </strong>
+          </p>
+        </div>
+        <div class="col-2">
+          <p><strong>
+              Subtotal
+            </strong>
+          </p>
+        </div>
       </div>
+      <hr>
+      <div class="container">
+        <div class="row abs-center" id="listado"></div>
+      </div>
+      <hr>
+      <h4>Tipo de envio.</h4>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"checked>
+        <label class="form-check-label" for="flexRadioDefault1">
+          Premium 2 a 5 dias(15%)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
+        <label class="form-check-label" for="flexRadioDefault2">
+          Express 5 a 8 dias(7%)
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
+        <label class="form-check-label" for="flexRadioDefault2">
+          Standard 12 a 15 dias(5%)
+        </label>
+      </div>
+      <h4 class="mt-4">Direccion de envio.</h4>
+      <div class="row g-3">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Calle" aria-label="First name">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Numero de puerta" aria-label="Last name">
+        </div>
+      </div>
+      <hr>
     </div>
-  </main>
+      </main>
   <footer class="text-muted">
     <div class="container">
       <p class="float-end">
