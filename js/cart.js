@@ -1,5 +1,6 @@
 let f;
 function update(cantidad, precio){
+    document.getElementById("teste").innerHTML=cantidad*precio;
     console.log(cantidad*precio);
 }
 function showCartItems(array){
