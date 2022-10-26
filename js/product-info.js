@@ -3,11 +3,15 @@ let objeto = PRODUCT_INFO_URL + pro + ".json";
 let comentarios = PRODUCT_INFO_COMMENTS_URL + pro + ".json";
 let arrayComentarios = [];
 
+
+    
+
 function showProduct(obj) {
-    console.log(obj)
     htmlContentToAppend = `
-                <div class="row">
+                <div class="row mt-4">
+                    <div class="d-flex flex-row justify-content-between">
                     <h1>${obj.name}</h1>
+                    </div>
                     <h2>Precio</h2>
                     <span>${obj.currency}-${obj.cost}</span>
                     <h2>Descripcion</h2>
@@ -92,16 +96,15 @@ function setProID(id) {
     console.log(id)
 }
 function showRelacionados(array) {
-    console.log(array)
-    for(let f=0; f<array.length; f++){
-    inner2 = `
+    for (let f = 0; f < array.length; f++) {
+        inner2 = `
     <div class="card" style="width: 18rem;" onclick="setProID(${array[f].id})">
         <img class="card-img-top" src="${array[f].image}" alt="Card image cap">
         <div class="card-body">
         <h5 class="card-title text-center">${array[f].name}</h5>
         </div>
     </div>`
-    document.getElementById("relatedProdu").innerHTML += inner2;
+        document.getElementById("relatedProdu").innerHTML += inner2;
     }
 }
 
