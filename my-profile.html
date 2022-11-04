@@ -45,21 +45,72 @@
             <a class="nav-link" href="sell.html">Vender</a>
           </li>
           <li>
-          <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
-            <option selected id="username"></option>
-            <option value="cart.html">Mi Carrito</option>
-            <option value="my-profile.html">Mi Perfil</option>
-            <option value="index.html">Cerrar sesión</option>
-          </select>
+            <select class="form-select" aria-label="Default select example" onchange="location = this.value;">
+              <option selected id="username"></option>
+              <option value="cart.html">Mi Carrito</option>
+              <option value="my-profile.html">Mi Perfil</option>
+              <option value="index.html">Cerrar sesión</option>
+            </select>
           </li>
         </ul>
       </div>
     </div>
   </nav>
   <main>
-    <div class="container">
-      <div class="alert alert-danger text-center" role="alert">
-        <h4 class="alert-heading">Funcionalidad en desarrollo</h4>
+    <div class="container mt-4">
+      <div class="text" role="alert">
+        <h4 class="">Perfil</h4>
+        <hr>
+        <form class="needs-validation" id="sellinfo">
+          <div class="row">
+            <div class="col">
+              <label for="productName">Primer nombre*</label>
+              <input type="text" class="form-control" id="primerNombre" value="" name="primerNombre">
+              <div class="invalid-feedback">
+                Ingresa primer nombre
+              </div>
+            </div>
+            <div class="col">
+              <label for="productName">Segundo nombre*</label>
+              <input type="text" class="form-control" id="segundoNombre" value="" name="segundoNombre">
+              <div class="invalid-feedback">
+                Ingresa segundo nombre
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <label for="productName">Primer apellido*</label>
+              <input type="text" class="form-control" id="primerApellido" value="" name="primerApellido">
+              <div class="invalid-feedback">
+                Ingresa primer apellido
+              </div>
+            </div>
+            <div class="col">
+              <label for="productName">Segundo apellido*</label>
+              <input type="text" class="form-control" id="segundoApellido" value="" name="segundoApellido">
+              <div class="invalid-feedback">
+                Ingresa segundo apellido
+              </div>
+            </div>
+          </div>
+          <div class="row mt-4">
+            <div class="col">
+              <label for="productName" id="">E-mail*</label>
+              <input type="text" class="form-control" id="email" disabled>
+            
+            </div>
+            <div class="col mb-4">
+              <label for="productName">Telefono contacto*</label>
+              <input type="text" class="form-control" id="telefono" value="" name="telefono">
+              <div class="invalid-feedback">
+                Ingresa telefono contacto
+              </div>
+            </div>
+          </div>
+          <hr class="mt-4">
+          <button class="btn btn-primary btn-lg mt-4" type="submit" id="submitForm">Guardar cambios</button>
+        </form>
       </div>
     </div>
   </main>
